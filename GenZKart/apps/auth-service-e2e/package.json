@@ -1,0 +1,26 @@
+{
+  "name": "@gen-zkart/auth-service-e2e",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "implicitDependencies": [
+      "@gen-zkart/auth-service"
+    ],
+    "targets": {
+      "e2e": {
+        "executor": "@nx/jest:jest",
+        "outputs": [
+          "{projectRoot}/test-output/jest/coverage"
+        ],
+        "options": {
+          "jestConfig": "apps/auth-service-e2e/jest.config.ts",
+          "passWithNoTests": true
+        },
+        "dependsOn": [
+          "@gen-zkart/auth-service:build",
+          "@gen-zkart/auth-service:serve"
+        ]
+      }
+    }
+  }
+}
