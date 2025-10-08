@@ -17,7 +17,7 @@ app.use(cookieParser())
 app.use(errorMiddleware)
 
 
-app.get("/status", (req: Request, res: Response) => {
+app.get("/", (req: Request, res: Response) => {
   res.json({
     service: "Auth Service",
     status: "started",
